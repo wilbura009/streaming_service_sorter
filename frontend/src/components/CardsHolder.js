@@ -43,7 +43,7 @@ const CardsHolder = props => {
           <div className='cards__container'>
             <div className='cards__wrapper'>
               <ul className='cards__items'>
-              {results.map((result) => <Card>{
+              {results.map(result => <Card>{
             <div>
                 <img
               className='cards__item__pic-wrap'

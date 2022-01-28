@@ -1,24 +1,13 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react"
+import { Card } from "react-bootstrap"
 
-function CardItem() {
-  return (
-    <>
-      <li className='cards__item'>
-        <Link className='cards__item__link'>
-          <figure className='cards__item__pic-wrap'>
-            <img
-              className='cards__item__img'
-              alt='Travel Image'
-            />
-          </figure>
-          <div className='cards__item__info'>
-          </div>
-        </Link>
-      </li>
-    </>
-  );
+export default function CardItem({ title, image }) {
+	return (
+		<Card>
+			<Card.Body>
+				<img class="card-img-top" src={image} alt="Title image"></img>
+				<Card.Title>{title}</Card.Title>
+			</Card.Body>
+		</Card>
+	)
 }
-
-export default CardItem;
