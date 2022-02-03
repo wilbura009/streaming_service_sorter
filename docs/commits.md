@@ -27,7 +27,7 @@ The commit ***<type>*** subject line should be all lowercase with a character li
 
 The ***[optional body]*** should be used to provide further detail that cannot fit within the character limitations of the subject line description.
 
-It is also a good location to utilize BREAKING CHANGE: ***<description>*** to note the reason for a breaking change within the commit.
+It is also a good location to utilize BREAKING CHANGE: ***\<description\>*** to note the reason for a breaking change within the commit.
 
 The ***[optional footer]***. We use the footer to link the JIRA story that would be closed with these changes for example: Closes D2IQ-<JIRA #> .
 
