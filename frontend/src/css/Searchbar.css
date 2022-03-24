@@ -1,0 +1,15 @@
+.searchbar-container {
+    display: grid;
+    grid-template-columns: auto;
+    padding-left: 20px; /* left, right, top, bottom */
+}
+
+.searchbar-form-field {
+    padding: 5px 500px 5px 5px; /* left, right, top, bottom */
+}
+
+.searchbar-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(0px,200px));
+    height: 0px;
+}
