@@ -2,6 +2,9 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import CardItem from "./CardItem";
 
+// -*- Styles -*- \\
+import '../css/Searchbar.css';
+
 const SearchBar = () => {
     //use state to store search and names
     const [searchTerm, setSearchTerm] = useState("")
@@ -34,41 +37,35 @@ const SearchBar = () => {
     }
 
     return (
-    <form action="/" method="get">
-            <label htmlFor="header-search">
-                <span className="visually-hidden">Find Movies & TV</span>
-            </label>
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-            }}
-        >
-            <input
-                value={searchTerm}
-                type="text"
-                placeholder="Show name"
-                onChange={e => setSearchTerm(e.target.value)}
-            ></input>
+        <div className={"searchbar-container"}>
+            <form action="/" method="get">
+                <input
+                    className={"searchbar-form-field"}
+                    value={searchTerm}
+                    type="text"
+                    placeholder="Show name"
+                    onChange={e => setSearchTerm(e.target.value)}
+                ></input>
+           </form>
+            <div className={"searchbar-cards"}>
+                {searchTerm && results
+                    .filter(result => result.title.toLowerCase().includes(searchTerm))
+                    .map(res => (
+                        <CardItem title={res.title} image={res.posterURLs.original}></CardItem>
+                    ))}
+            </div>
         </div>
-        <div
-            className="my-5"
-            style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, max(300px)",
-                gap: "1rem",
-                alignItems: "flex-start",
-            }}
-        >
-            {searchTerm && results
-                .filter(result => result.title.toLowerCase().includes(searchTerm))
-                .map(res => (
-                    <CardItem title={res.title} image={res.posterURLs.original}></CardItem>
-                ))}
-        </div>
-    </form>
     );
 };
 
 export default SearchBar;
+
+/*
+className="searchbar-cards"
+style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, max(200px)",
+    gap: "1rem",
+    alignItems: "flex-start",
+}}
+ */

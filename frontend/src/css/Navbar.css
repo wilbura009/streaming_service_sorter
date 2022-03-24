@@ -1,34 +1,27 @@
 .navbar {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  background-color: #1b1818;
   height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  /*
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  */
 }
 
 .navbar-container {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 80px;
+  height: 60px;
   max-width: 1500px;
+  display: flex;
 }
 
 .navbar-logo {
   color: #fff;
-  justify-self: start;
-  margin-left: 20px;
+  margin: 0px 20px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
+  font-size: 2vw; /* vw: variable based on window size */
 }
 
+/*
 .fa-typo3 {
   margin-left: 0.5rem;
   font-size: 1.8rem;
@@ -43,10 +36,6 @@
   width: 60vw;
   justify-content: end;
   margin-right: 2rem;
-}
-
-.nav-item {
-  height: 80px;
 }
 
 .nav-links {
@@ -74,7 +63,12 @@
 .menu-icon {
   display: none;
 }
+*/
 
+/* NOTE: This was messing with the navbar item formatting on desktop
+ *       when the window was scaled down
+*/
+/*
 @media screen and (max-width: 960px) {
   .NavbarItems {
     position: relative;
@@ -156,3 +150,4 @@
     transition: 250ms;
   }
 }
+*/

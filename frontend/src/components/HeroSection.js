@@ -2,16 +2,27 @@ import React from 'react';
 import { Button } from './Button';
 
 // ** STYLES ** \\
+import '../App.css';
 import '../css/HeroSection.css';
-//import '../css/App.css'; // <- Is this for fallback? Do we need it?
+import { ReactComponent as HuluIMG } from "../img/hulu.svg";
+import { ReactComponent as NetflixIMG } from '../img/netflix.svg';
 
 function HeroSection() {
   return (
-      <div className='hero-container'>
+      <div className={'hero-container'}>
           <h1>Can't find <strong><em>where</em></strong> to watch?</h1>
+          <div className={'stream-service-img-container'}>
+            <NetflixIMG />
+            <HuluIMG />
+          </div>
       </div>
   );
-      {/*
+/*
+    <img src={netflix_img} alt={'netflix'}></img>
+    <img src={hulu_img} alt={'hulu'}></img>
+ */
+
+    {/*
     <div className='hero-container'>
       <h1>Can't Find Where to Watch?</h1>
       <p>What are you waiting for?</p>

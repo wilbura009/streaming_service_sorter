@@ -5,14 +5,14 @@ import {Card} from 'react-bootstrap';
 import axios from "axios"
 
 // ** STYLES ** \\
-import '../css/Cards.css';
+import '../css/CardCollage.css';
 
 // ** Collage ** \\
 import collage from '../img/collage.png'
 
 var a = 154;
 
-const CardsHolder = props => {
+const CardCollage = props => {
 
     const [results, setResults] = useState([]);
 
@@ -72,4 +72,4 @@ const CardsHolder = props => {
       */}
 };
 
-export default CardsHolder;
+export default CardCollage;
