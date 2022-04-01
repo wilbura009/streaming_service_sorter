@@ -11,7 +11,7 @@ function HeroSection() {
           <h1>Can't find <strong><em>where</em></strong> to watch?</h1>
       </div>
   );
-      {/*
+      /*
     <div className='hero-container'>
       <h1>Can't Find Where to Watch?</h1>
       <p>What are you waiting for?</p>
@@ -27,7 +27,7 @@ function HeroSection() {
       </div>
     </div>
   );
-    */}
+    */
 }
 
 export default HeroSection;

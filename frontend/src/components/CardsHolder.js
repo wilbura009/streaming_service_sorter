@@ -49,7 +49,7 @@ const CardsHolder = props => {
             </div>
         </div>
     )
-        {/*
+        /*
         <div className='cards'>
           <h1>Check out these AWESOME shows!</h1>
           <div className='cards__container'>
@@ -69,7 +69,7 @@ const CardsHolder = props => {
           </div>
         </div>
       )
-      */}
+      */
 };
 
 export default CardsHolder;

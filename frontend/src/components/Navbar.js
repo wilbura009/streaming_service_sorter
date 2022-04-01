@@ -41,7 +41,7 @@ function Navbar() {
         </div>
       </nav>
   );
-  {/*
+  /*
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
@@ -90,7 +90,7 @@ function Navbar() {
         </div>
       </nav>
   );
-      */}
+      */
 }
 
 export default Navbar;
