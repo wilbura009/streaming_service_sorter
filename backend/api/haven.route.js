@@ -1,4 +1,5 @@
 import express, { response } from "express"
+import HavenDAO from "../ao/havenAO.js"
 import axios from "axios"
 const router = express.Router()
 
@@ -26,6 +27,10 @@ router.route("/").get((req, res) => {
                 data
             })
             console.log(res_array)
+            const TitleResponse = HavenDAO.addTitle(
+                data.results[0].title
+            )
+            .catch(err => {console.error(err.stack)})
             res.json(data)
         })
 })
