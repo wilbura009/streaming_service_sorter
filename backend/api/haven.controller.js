@@ -21,4 +21,15 @@ export default class HavenController{
             res.status(500).json({ error: e.message })
         }
     }
+    static async apiPost(req, res, next) {
+        try {
+            const { title, imdbID } = req.body
+            const TitleResponse = await HavenDAO.addTitle(title, imdbID)
+            res.json({
+                message: "title added",
+            })
+        } catch (e) {
+            res.status(500).json({ error: e.message })
+        }
+    }
 }

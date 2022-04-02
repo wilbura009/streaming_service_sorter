@@ -5,6 +5,7 @@ import HavenController from "./haven.controller.js"
 
 const router = express.Router()
 
+var a = 154
 
 router.route("/").get((req, res) => {
     let config = {
@@ -16,12 +17,14 @@ router.route("/").get((req, res) => {
             country: 'us',
             service: 'netflix',
             type: 'series',
-            keyword: 'Ozark'
+            page: '1',
+            output_language: 'en',
+            language: 'en'
         },
     }
 
     axios.get('https://streaming-availability.p.rapidapi.com/search/basic', config)
-        .then(response => {
+        .then(response => {            
             const data = response.data
             const res_array = []
 
@@ -29,14 +32,30 @@ router.route("/").get((req, res) => {
                 data
             })
             console.log(res_array)
-            const TitleResponse = HavenDAO.addTitle(
-                data.results[0].title,
-                data.results[0].imdbID
-            )
-            .catch(err => {console.error(err.stack)})
-            res.json(data)
+        
+            // loop through results array and add each title to the database
+            for (let i = 0; i < 5; i++) {
+                const title = data.results[i].title
+                const imdbID = data.results[i].imdbID
+                const image = data.results[i].posterURLs.original
+                console.log(title)
+                console.log(imdbID)
+                console.log(image)
+                HavenDAO.addTitle(title, imdbID, image)
+            }
         })
+        
+        //     const TitleResponse = HavenDAO.addTitle(
+        //         data.results[0].title,
+        //         data.results[0].imdbID,
+        //         data.results[0].posterURLs.original
+        //     )
+        //     .catch(err => {console.error(err.stack)})
+        //     res.json(data)
+        // })
 })
-router.route("/titles").get(HavenController.apiGet)
+router
+    .route("/titles")
+    .get(HavenController.apiGet)
 
 export default router

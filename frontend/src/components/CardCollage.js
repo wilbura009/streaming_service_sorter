@@ -9,8 +9,6 @@ import '../css/CardCollage.css';
 
 // ** Collage ** \\
 import collage_img from '../img/collage.png'
-import netflix_img from '../img/netflix.png'
-import hulu_img from '../img/hulu.png'
 
 const CardCollage = props => {
         return (

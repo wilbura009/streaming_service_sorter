@@ -12,8 +12,8 @@ function HeroSection() {
       <div className={'hero-container'}>
           <h1>Can't find <strong><em>where</em></strong> to watch?</h1>
           <div className={'stream-service-img-container'}>
-            <NetflixIMG />
-            <HuluIMG />
+            <NetflixIMG width="10%"/>
+            <HuluIMG width="10%"/>
           </div>
       </div>
   );
