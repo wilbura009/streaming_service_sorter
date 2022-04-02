@@ -15,16 +15,41 @@ export default class HavenDAO{
         }
     }
 
-    static async addTitle (title){
+    static async addTitle (title, imdbID) {
         // Create an objectID and insert it into the database
         const titleDoc = {
             title: title,
+            imdbID: imdbID,
         }
         try{
             return await data.insertOne(titleDoc)
         } catch (e) {
             console.error(`Unable to post title: ${e}`)
             return { error: e}
+        }
+    }
+    // Get a list of all the titles in the database
+    static async getTitles({
+        page = 0,
+        titlesPerPage = 20,
+    } = {}) {
+        let cursor = data.find({})
+
+        // try{
+        //     cursor = await titles
+        // }
+        const displayCursor = cursor.limit(titlesPerPage).skip(page * titlesPerPage)
+
+        try{
+            const titles = await displayCursor.toArray()
+            const totalTitles = await data.countDocuments()
+            return {
+                titles,
+                totalTitles,
+            }
+        } catch (e){
+            console.error(`Unable to get titles: ${e}`)
+            return { titles: [], totalTitles: 0 }
         }
     }
 }

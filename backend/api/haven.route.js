@@ -1,6 +1,8 @@
 import express, { response } from "express"
 import HavenDAO from "../ao/havenAO.js"
 import axios from "axios"
+import HavenController from "./haven.controller.js"
+
 const router = express.Router()
 
 
@@ -28,11 +30,13 @@ router.route("/").get((req, res) => {
             })
             console.log(res_array)
             const TitleResponse = HavenDAO.addTitle(
-                data.results[0].title
+                data.results[0].title,
+                data.results[0].imdbID
             )
             .catch(err => {console.error(err.stack)})
             res.json(data)
         })
 })
+router.route("/titles").get(HavenController.apiGet)
 
 export default router

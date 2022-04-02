@@ -1,16 +1,24 @@
-"use strict"
-// import HavenDAO from "../ao/havenAO"
-// export default class HavenController{
-//     static async apiPost(req, res, next) {
-//         try {
-//             const title = req.body.title
-//             // send this info 
-//             const TitleResponse = await HavenDAO.addTitle(
-//                 title
-//             )
-//             res.json({ status: "success" })
-//         } catch (e) {
-//             res.status(500).json({ error: e.message })
-//         }
-//     }
-// }
+import HavenDAO from "../ao/havenAO.js"
+
+export default class HavenController{
+    static async apiGet(req, res, next) {
+        try {
+            const titlesPerPage = req.query.titlesPerPage ? parseInt(req.query.titlesPerPage, 10) : 20
+            const page = req.query.page ? parseInt(req.query.page, 10) : 0
+
+            const { titles, totalTitles } = await HavenDAO.getTitles({
+                titlesPerPage, 
+                page
+            })
+            let response = {
+                titles: titles,
+                page: page,
+                entries_per_page: titlesPerPage,
+                totalTitles: totalTitles,
+            }
+            res.json(response)
+        } catch (e) {
+            res.status(500).json({ error: e.message })
+        }
+    }
+}
