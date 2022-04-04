@@ -60,56 +60,5 @@ const CardsDeck = props => {
 	    </Container>
 	  );
 	};
-
-// export default function CardsDeck() {
-// 	//use state to store search and names 
-// 	const [searchTerm, setSearchTerm] = useState("")
-// 	const [results, setResults] = useState([])
-
-// 	// Tell react the component needs to do something after Rendering
-// 	useEffect(() => {
-// 		retrieveResults()
-// 	}, [])
-
-// 	const retrieveResults = () => {
-		
-// 	}
-
-
-// 		return (
-// 		<Container className="my-4">
-// 			<h1>What would you like to watch?</h1>
-// 			<div
-// 				style={{
-// 					display: "flex",
-// 					justifyContent: "center",
-// 					alignItems: "center",
-// 				}}
-// 			>
-// 				<input
-// 					value={searchTerm}
-// 					type="text"
-// 					placeholder="Show name"
-// 					onChange={e => setSearchTerm(e.target.value)}
-// 				></input>
-// 			</div>
-// 			<div
-// 				className="my-5"
-// 				style={{
-// 					display: "grid",
-// 					gridTemplateColumns: "repeat(auto-fill, max(300px)",
-// 					gap: "1rem",
-// 					alignItems: "flex-start",
-// 				}}
-// 			>
-// 				{searchTerm && results
-// 					.filter(result => result.title.toLowerCase().includes(searchTerm))
-// 					.map(res => (
-// 						<CardItem title={res.title} image={res.posterURLs.original}></CardItem>
-// 					))}
-// 			</div>
-// 		</Container>
-// 	)
-// }
  
 export default CardsDeck;
