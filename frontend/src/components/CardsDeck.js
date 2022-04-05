@@ -5,6 +5,7 @@ import TitlesDataService from "../services/titles"
 
 // import CardItem from "./CardItem"
 import Card from "react-bootstrap/Card";
+import '../css/CardCollage.css';
 
 
 const CardsDeck = props => {
@@ -39,7 +40,6 @@ const CardsDeck = props => {
 	  };
 
 	  return (
-	    <Container>
 	      <div className="cards__container">
 	        <h1>Check out these AWESOME shows!</h1>
 	        {/* <SearchBar onSearch={handleSearch} /> */}
@@ -57,7 +57,6 @@ const CardsDeck = props => {
 	          ))}
 	        </div>
 	      </div>
-	    </Container>
 	  );
 	};
  

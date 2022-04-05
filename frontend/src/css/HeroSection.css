@@ -1,7 +1,7 @@
 .hero-container {
   /*box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);*/
   background-color: #2e3840;
-  padding: 180px;
+  padding: 180px 0px 180px; /* top | horizontal | bottom */
   /*
   background: url('/images/img-home.jpg') center center/cover no-repeat;
   height: 100px;
@@ -13,8 +13,9 @@
   */
 }
 
-.hero-container > h1 {
+.hero-container > h1, em, svg {
   color: #ffffff;
+  background-color: #2e3840;
   font-size: 4vw; /* vw: variable based on window size */
   text-align: center;
 }

@@ -6,6 +6,7 @@
 
 .searchbar-form-field {
     padding: 5px 500px 5px 5px; /* left, right, top, bottom */
+    background-color: white;
 }
 
 .searchbar-cards {
