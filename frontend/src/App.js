@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import SearchBar from "./components/SearchBar";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Result from './components/Result';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/titles' element={<Home />} />
+          <Route path='/result' element={<Result />} />
         </Routes>
       </Router>
     </>
