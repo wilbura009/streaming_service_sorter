@@ -15,7 +15,7 @@ export default class HavenDAO{
         }
     }
 
-    static async addTitle (title, imdbID, image) {
+    static async addTitle (title, imdbID, image, imageBar, description) {
         // query db for title
         // if title exists, return
         // else, insert title into db
@@ -28,6 +28,8 @@ export default class HavenDAO{
                 title: title,
                 imdbID: imdbID,
                 image: image,
+                imageBar: imageBar,
+                description: description,
             }
             await data.insertOne(newTitle)
         } catch (e) {

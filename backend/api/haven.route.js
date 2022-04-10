@@ -5,7 +5,7 @@ import HavenController from "./haven.controller.js"
 
 const router = express.Router()
 
-var a = 154
+var a = 92
 
 router.route("/").get((req, res) => {
     let config = {
@@ -38,11 +38,14 @@ router.route("/").get((req, res) => {
                 const title = data.results[i].title
                 const imdbID = data.results[i].imdbID
                 const image = data.results[i].posterURLs.original
-                console.log(title)
-                console.log(imdbID)
-                console.log(image)
-                HavenDAO.addTitle(title, imdbID, image)
+                const imageBar = data.results[i].posterURLs["92"]
+                const description = data.results[i].overview
+                // console.log(title)
+                // console.log(imdbID)
+                // console.log(image)
+                HavenDAO.addTitle(title, imdbID, image, imageBar, description)
             }
+            res.json(res_array)
         })
         
         //     const TitleResponse = HavenDAO.addTitle(
@@ -51,7 +54,6 @@ router.route("/").get((req, res) => {
         //         data.results[0].posterURLs.original
         //     )
         //     .catch(err => {console.error(err.stack)})
-        //     res.json(data)
         // })
 })
 router
