@@ -1,9 +1,8 @@
 
 import React from 'react';
-import Navbar from './components/Navbar';
 import './App.css';
 import Home from './pages/Home';
-import SearchBar from "./components/SearchBar";
+import Result from './components/Result';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,6 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/titles' element={<Home />} />
+          <Route path='/result' element={<Result />} />
         </Routes>
       </Router>
     </>

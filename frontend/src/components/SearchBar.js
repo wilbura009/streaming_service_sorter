@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import CardItem from "./CardItem";
+import TitlesDataService from "../services/titles";
+import Card from "react-bootstrap/Card";
 
 // -*- Styles -*- \\
 import '../css/Searchbar.css';
@@ -9,6 +10,7 @@ const SearchBar = () => {
     //use state to store search and names
     const [searchTerm, setSearchTerm] = useState("")
     const [results, setResults] = useState([])
+    const [totalTitles, setTotalTitles] = useState([]);
 
     // Tell react the component needs to do something after Rendering
     useEffect(() => {
@@ -16,25 +18,16 @@ const SearchBar = () => {
     }, [])
 
     const retrieveResults = () => {
-        let config = {
-            headers: {
-                "X-RapidAPI-Host": "streaming-availability.p.rapidapi.com",
-                "X-RapidAPI-Key": "b5503a63eamsh2188c191ff68272p15245ejsnb138aa27d288",
-            },
-            params: {
-                country: "us",
-                service: "netflix",
-                type: "series",
-            },
-        }
-
-        axios
-            .get("https://streaming-availability.p.rapidapi.com/search/basic", config)
+        TitlesDataService.getAll()
             .then(response => {
-                setResults(response.data.results)
-                //console.log(results)
+                console.log(response.data);
+                setResults(response.data.titles);
+                setTotalTitles(response.data.totalTitles);
             })
-    }
+            .catch(e => {
+                console.log(e);
+            });
+    };
 
     return (
         <div className={"searchbar-container"}>
@@ -51,7 +44,17 @@ const SearchBar = () => {
                 {searchTerm && results
                     .filter(result => result.title.toLowerCase().includes(searchTerm))
                     .map(res => (
-                        <CardItem title={res.title} image={res.posterURLs.original}></CardItem>
+                        // create a card with title and image
+                        <Card
+                            key={res.imdbID}
+                            className={"searchbar-card"}
+                            style={{ width: "18rem" }}
+                        >
+                            <Card.Img variant="top" src={res.image} />
+                            <Card.Body>
+                                <Card.Title>{res.title}</Card.Title>
+                            </Card.Body>
+                        </Card>
                     ))}
             </div>
         </div>

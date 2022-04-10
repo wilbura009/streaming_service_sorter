@@ -14,6 +14,7 @@
 }
 
 .hero-container > h1 {
+  background-color: #2e3840;
   color: #ffffff;
   font-size: 4vw; /* vw: variable based on window size */
   text-align: center;
@@ -29,6 +30,7 @@
 }
 
 .stream-service-img-container > svg {
+  background-color: #2e3840;
   width: fit-content;
   height: fit-content;
   margin: auto;

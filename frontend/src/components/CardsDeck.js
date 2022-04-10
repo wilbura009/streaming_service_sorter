@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Container } from "react-bootstrap"
 import { useEffect } from "react"
 import TitlesDataService from "../services/titles"
+import { Link } from "react-router-dom";
 
 // import CardItem from "./CardItem"
 import Card from "react-bootstrap/Card";
@@ -52,6 +53,9 @@ const CardsDeck = props => {
 	            >
 	              <Card.Img variant="top" src={title.image} />
 	              <Card.Body>
+						<Card.Title>
+							<Link to={"/result"}>{title.title}</Link>
+						</Card.Title>
 	              </Card.Body>
 	            </Card>
 	          ))}
