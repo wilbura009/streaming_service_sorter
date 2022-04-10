@@ -1,0 +1,14 @@
+.main-container{
+    color: #ffffff;
+    
+    border-right: 1px solid #2e3840;
+    padding-top: 10px;
+}
+
+.cards * {
+    background-color: #ffffff;
+}
+
+.pad {
+    padding-bottom: 40px;
+}
