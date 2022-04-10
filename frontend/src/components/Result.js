@@ -22,12 +22,13 @@ export default function Result() {
             <Col>  
                 <h1 class='pad'>Title of the Show</h1>
                 <h5 class=''>Watch now</h5>
-                <Card >
+                <Card className='bg-warning'>
                     <Card.Body className={''}>
                         <Card.Text>Cute Logos that link to provider</Card.Text>
                     </Card.Body>
                 </Card>
             </Col>
+            <Col sm={1} className='border-left'></Col>
         </Row>
     </Container>
     </>
