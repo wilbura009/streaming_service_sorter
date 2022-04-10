@@ -6,6 +6,7 @@ import TitlesDataService from "../services/titles"
 // import CardItem from "./CardItem"
 import Card from "react-bootstrap/Card";
 import '../css/CardCollage.css';
+import { Link } from "react-router-dom";
 
 
 const CardsDeck = props => {
@@ -52,6 +53,10 @@ const CardsDeck = props => {
 	            >
 	              <Card.Img variant="top" src={title.image} />
 	              <Card.Body>
+					<Card.Title>
+						
+						<Link to={"/result"}>{title.title}</Link>
+					</Card.Title>
 	              </Card.Body>
 	            </Card>
 	          ))}
