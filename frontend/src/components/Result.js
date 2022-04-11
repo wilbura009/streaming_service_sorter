@@ -6,6 +6,7 @@ import { useLocation, useParams } from "react-router-dom"
 import TitlesDataService from "../services/titles"
 import { useState, useEffect } from "react"
 import YoutubeEmbed from "./YoutubeEmbed"
+import { Route } from "react-router-dom"
 import titles from "../services/titles"
 
 //Create separate css and override

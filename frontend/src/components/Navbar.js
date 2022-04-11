@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar'
+import { Nav } from 'react-bootstrap';
 
 // -*- Styles -*- \\
 import '../css/Navbar.css';
