@@ -43,6 +43,7 @@ router.route("/").get((req, res) => {
                 console.log(image)
                 HavenDAO.addTitle(title, imdbID, image)
             }
+            res.json(res_array)
         })
         
         //     const TitleResponse = HavenDAO.addTitle(
@@ -51,7 +52,7 @@ router.route("/").get((req, res) => {
         //         data.results[0].posterURLs.original
         //     )
         //     .catch(err => {console.error(err.stack)})
-        //     res.json(data)
+        //     
         // })
 })
 router

@@ -5,6 +5,7 @@ import "../css/Result.css"
 import { useLocation, useParams } from "react-router-dom"
 import TitlesDataService from "../services/titles"
 import { useState, useEffect } from "react"
+import YoutubeEmbed from "./YoutubeEmbed"
 import titles from "../services/titles"
 
 //Create separate css and override
@@ -41,13 +42,13 @@ export default function Result(props) {
 		<>
 			<div className="outer">
 				<Navbar />
-				<Container className={"main-container"}>
+				<Container className={"main-container rounded"}>
 					<Row>
 						<Col sm={5} className="">
-							<Card>
+							<Card style={{ backgroundColor: "#2e3840" }}>
 								<Card.Img src={title && title[0].image} />
 								<Card.Body>
-									<Card.Title className="">Card title</Card.Title>
+									<Card.Title className="" style={{borderBottom: "1px solid #FFA500"}}></Card.Title>
 								</Card.Body>
 							</Card>
 						</Col>
@@ -58,6 +59,7 @@ export default function Result(props) {
 								<h5 class="" style={{ color: "#FFA500" }}>
 									Watch now
 								</h5>
+                                
 								<Card className="border border-warning">
 									<Card.Body
 										className=""
@@ -68,12 +70,18 @@ export default function Result(props) {
 								</Card>
 							</div>
 
+                            <div class="pad">
+                            <YoutubeEmbed embedId="rokGy0huYEA" />
+                            </div>
+
 							<div>
 								<h5 class="" style={{ color: "#FFA500" }}>
-									Synopsis
+									Synopsis:
 								</h5>
                                 <h7>{title && title[0].description}</h7>
 							</div>
+
+                            
 						</Col>
 						<Col sm={1} className="border-left"></Col>
 					</Row>
