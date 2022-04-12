@@ -49,8 +49,8 @@ const CardsDeck = props => {
 				className="cards__wrapper"
 				style={{
 					display: "grid",
-					gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-					gap: "1rem",
+					gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+					gap: "2rem",
 					alignItems: "flex-start",
 				}}
 			>
