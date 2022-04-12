@@ -51,7 +51,7 @@ const CardsDeck = props => {
 					display: "grid",
 					gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
 					gap: "2rem",
-					alignItems: "flex-start",
+					alignItems: "flex-start", 
 				}}
 			>
 				{titles.map(title => (
