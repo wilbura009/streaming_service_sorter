@@ -35,6 +35,9 @@ function Navbar() {
               StreamEZ
               <i className='fab fa-typo3'/>
             </Link>
+            <Link to='/' className='navbar-home-logo'>Home</Link>
+            <Link to='/about' className='navbar-home-logo'>About Us</Link>
+            <Link to='/' className='navbar-home-logo'>Watchlist</Link>
             <SearchBar/>
         </div>
       </nav>

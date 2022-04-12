@@ -21,6 +21,24 @@
   font-size: 2vw; /* vw: variable based on window size */
 }
 
+.navbar-logo:hover {
+  color: #ffc119;
+  transform: scale(1.05);
+}
+
+a.navbar-home-logo{
+  color: #e3e3e3;
+  margin: 0px 10px;
+  text-decoration: none;
+  font-size: 100%; /* vw: variable based on window size */
+}
+
+a.navbar-home-logo:hover {
+  border-bottom: 2px solid #fff;
+  transition: all 0.1s ease-out;
+  color: #fff;
+}
+
 /*
 .fa-typo3 {
   margin-left: 0.5rem;

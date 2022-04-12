@@ -1,0 +1,10 @@
+.about-us-outer{
+    background: linear-gradient(#2e3840, #9198e5);
+    min-height: 90vh;
+    color: #fff
+}
+
+.about-us-inner{
+    padding-top: 25px;
+    margin-left: 7px;
+}
