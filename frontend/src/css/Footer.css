@@ -1,5 +1,5 @@
 .footer-container {
-  color: #fff;
+  color: rgb(0, 0, 0);
   background-color: #242424;
   padding: 1rem 1rem;
   display: flex;
@@ -10,6 +10,7 @@
 
   /* flex-wrap justify-content-between align-items-center py-3 border-top */
 }
+
 .btns {
   background-color: #fff;
 }

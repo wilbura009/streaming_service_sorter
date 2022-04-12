@@ -6,8 +6,7 @@ import Home from './pages/Home';
 import SearchBar from "./components/SearchBar";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Result from './components/Result';
-
+import Result from './pages/Result';
 
 function App() {
   return (

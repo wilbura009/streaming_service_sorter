@@ -11,7 +11,7 @@ function Home() {
         <Navbar/>
         <HeroSection />
         <CardsDeck />
-        {/*<Footer />*/}
+        <Footer />
     </>
   );
 }

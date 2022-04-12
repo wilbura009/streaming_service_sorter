@@ -7,8 +7,8 @@ import TitlesDataService from "../services/titles"
 import { useState, useEffect } from "react"
 import titles from "../services/titles"
 import { Link } from "react-router-dom"
-import YoutubeEmbed from "./YoutubeEmbed"
-import Footer from "./Footer"
+import YoutubeEmbed from "../components/YoutubeEmbed"
+import Footer from "../components/Footer"
 
 //Create separate css and override
 //Main container wont take a background color?
