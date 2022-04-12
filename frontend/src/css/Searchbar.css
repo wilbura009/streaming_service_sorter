@@ -1,16 +1,140 @@
 .searchbar-container {
     display: grid;
     grid-template-columns: auto;
-    padding-left: 20px; /* left, right, top, bottom */
+    padding-left: 20px;
+    /* left, right, top, bottom */
 }
 
 .searchbar-form-field {
-    padding: 5px 500px 5px 5px; /* left, right, top, bottom */
+    padding: 5px 500px 5px 5px;
+    /* left, right, top, bottom */
     background-color: white;
+    color: black;
 }
 
 .searchbar-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(0px,200px));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 10px;
+    padding-left: 20px;
+    /* left, right, top, bottom */
     height: 0px;
+    width: 100%;
+}
+
+#search {
+    float: right;
+    width: 300px;
+    margin-top: 20px
+}
+
+#search .search-content {
+    width: 100%;
+    position: relative
+}
+
+#search .search-content .search-icon {
+    position: absolute;
+    background: 0 0;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #ffc119;
+    font-size: 14px
+}
+
+#search .search-input {
+    width: 100%;
+    box-shadow: none !important;
+    padding-left: 10px;
+    padding-right: 40px;
+    background: #101010;
+    height: 32px;
+    border-radius: 0;
+    border: 1px solid #a1a1a1;
+    color: #ffc119;
+    font-size: 14px
+}
+
+#search .search-input::placeholder {
+    color: #ffc119;
+    opacity: .5
+}
+
+.item {
+    margin: 5px 0;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    padding-left: 40px;
+    min-height: 34px
+}
+
+.search-pop {
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    right: 0;
+    z-index: 9
+}
+
+.search-pop .search-pop-list {
+    padding: 5px 10px;
+    background: #1b1b1b;
+    border: 1px solid #a1a1a1
+}
+
+.search-pop .search-pop-list .item {
+    margin: 5px 0;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    padding-left: 40px;
+    min-height: 34px
+}
+
+.search-pop .search-pop-list .item a {
+    overflow: hidden;
+    display: block
+}
+
+.search-pop .search-pop-list .item .anime-name {
+    margin-bottom: 0
+}
+
+.anime-name {
+    font-size: medium;
+}
+
+.search-pop .search-pop-list .item .alias-name {
+    margin-bottom: 0;
+    font-size: .9em;
+    color: #888
+}
+
+.search-pop .search-pop-list .item .anime-poster {
+    width: 30px;
+    padding-bottom: 34px;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.search-pop .search-pop-list .item .anime-poster .anime-poster-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover
+}
+
+.anime-poster-img {
+    width: 40px;
+    height: 50px;
 }

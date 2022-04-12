@@ -8,17 +8,19 @@
   padding: 100px 0px;
 }
 
-.cards__container > h1 {
+.cards__container>h1 {
   color: #ffffff;
   text-align: center;
-  font-size: 4vw; /* vw: variable based on window size */
+  font-size: 4vw;
+  /* vw: variable based on window size */
   margin: auto;
   margin-bottom: 40px;
 }
 
-.img__collage{
+.img__collage {
   max-width: 50%;
 }
+
 /*
 .cards__container {
   display: flex;

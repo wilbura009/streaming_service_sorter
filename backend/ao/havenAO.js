@@ -15,7 +15,7 @@ export default class HavenDAO{
         }
     }
 
-    static async addTitle (title, imdbID, image, imageBar, description) {
+    static async addTitle (title, imdbID, image, imageBar, description, streamName, link, video) {
         // query db for title
         // if title exists, return
         // else, insert title into db
@@ -30,6 +30,10 @@ export default class HavenDAO{
                 image: image,
                 imageBar: imageBar,
                 description: description,
+                streamName: streamName,
+                link: link,
+                video: video,
+                
             }
             await data.insertOne(newTitle)
         } catch (e) {
@@ -39,7 +43,7 @@ export default class HavenDAO{
     // Get a list of all the titles in the database
     static async getTitles({
         page = 0,
-        titlesPerPage = 20,
+        titlesPerPage = 30,
     } = {}) {
         let cursor = data.find({})
 
@@ -56,6 +60,15 @@ export default class HavenDAO{
         } catch (e){
             console.error(`Unable to get titles: ${e}`)
             return { titles: [], totalTitles: 0 }
+        }
+    }
+    static async getOne(imdbID) {
+        try {
+            const title = await data.findOne({ imdbID })
+            return title
+        } catch (e) {
+            console.error(`Unable to get title: ${e}`)
+            return {}
         }
     }
 }

@@ -1,14 +1,26 @@
-.main-container{
+.outer {
+    /* background-color: #fff; */
+    background: linear-gradient(#2e3840, #9198e5);
+    min-height: 100vh;
+}
+
+.main-container {
     color: #ffffff;
-    
-    border-right: 1px solid #2e3840;
+    /* background-color: #2e3840; */
+    min-height: 90vh;
+    background: linear-gradient(#2e3840, #a0a3a7);
+    /* border-right: 1px solid #2e3840; */
     padding-top: 10px;
 }
 
 .cards * {
-    background-color: #ffffff;
+    background-color: #2e3840;
 }
 
 .pad {
     padding-bottom: 40px;
+}
+
+.card-body {
+    background-color: #2e3840;
 }

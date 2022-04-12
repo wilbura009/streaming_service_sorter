@@ -1,0 +1,33 @@
+.ab_-content {
+    min-height: 100px;
+    padding: 15px
+}
+
+.anime_list.anime_list-grid {
+    margin: 0 -6px;
+    display: block;
+    clear: both
+}
+
+.anime_list.anime_list-grid .item {
+    float: left;
+    width: calc(25% - 16px);
+    margin: 10px 8px
+}
+
+.anime_list.anime_list-grid .item .anime-poster {
+    margin-bottom: 10px;
+    position: relative
+}
+
+.anime_list.anime_list-grid .item .anime-poster:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 33px;
+    background: linear-gradient(transparent, #1b1b1b);
+    opacity: .9;
+    z-index: 2
+}

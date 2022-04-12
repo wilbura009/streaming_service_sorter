@@ -1,10 +1,12 @@
 
 import React from 'react';
-import './App.css';
+import Navbar from './components/Navbar';
+//import './App.css';
 import Home from './pages/Home';
-import Result from './components/Result';
+import SearchBar from "./components/SearchBar";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Result from './components/Result';
 
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/titles' element={<Home />} />
-          <Route path='/result' element={<Result />} />
+          <Route path='/result/:imdbID' element={<Result />} />
         </Routes>
       </Router>
     </>

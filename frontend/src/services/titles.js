@@ -6,9 +6,9 @@ class TitlesDataService {
         return http.get(`/titles/?page=${page}`);
     }
 
-    // get(id) {
-    //     return http.get(`/titles/${id}`);
-    // }
+    get(imdbID) {
+        return http.get(`/titles/${imdbID}`);
+    }
 
     // create(data) {
     //     return http.post("/titles", data);

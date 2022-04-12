@@ -3,7 +3,7 @@ import HavenDAO from "../ao/havenAO.js"
 export default class HavenController{
     static async apiGet(req, res, next) {
         try {
-            const titlesPerPage = req.query.titlesPerPage ? parseInt(req.query.titlesPerPage, 10) : 20
+            const titlesPerPage = req.query.titlesPerPage ? parseInt(req.query.titlesPerPage, 10) : 30
             const page = req.query.page ? parseInt(req.query.page, 10) : 0
 
             const { titles, totalTitles } = await HavenDAO.getTitles({
@@ -21,13 +21,13 @@ export default class HavenController{
             res.status(500).json({ error: e.message })
         }
     }
-    static async apiPost(req, res, next) {
+
+
+    static async apiGetOne(req, res, next) {
         try {
-            const { title, imdbID } = req.body
-            const TitleResponse = await HavenDAO.addTitle(title, imdbID)
-            res.json({
-                message: "title added",
-            })
+            const imdbID = req.params.imdbID
+            const title = await HavenDAO.getOne(imdbID)
+            res.json(title)
         } catch (e) {
             res.status(500).json({ error: e.message })
         }

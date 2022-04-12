@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import TitlesDataService from "../services/titles";
 import Card from "react-bootstrap/Card";
-
+import {Link} from "react-router-dom";
 // -*- Styles -*- \\
 import '../css/Searchbar.css';
 
@@ -40,22 +40,24 @@ const SearchBar = () => {
                     onChange={e => setSearchTerm(e.target.value)}
                 ></input>
            </form>
-            <div className={"searchbar-cards"}>
+            <div className={"search-pop"}>
+                <div className={"search-pop-list"}>
                 {searchTerm && results
                     .filter(result => result.title.toLowerCase().includes(searchTerm))
                     .map(res => (
                         // create a card with title and image
-                        <Card
-                            key={res.imdbID}
-                            className={"searchbar-card"}
-                            style={{ width: "18rem" }}
+                        <div
+                            className={"search-pop-list-item"}
                         >
-                            <Card.Img variant="top" src={res.image} />
-                            <Card.Body>
-                                <Card.Title>{res.title}</Card.Title>
-                            </Card.Body>
-                        </Card>
+                            {/* <div className={"search-pop-list-item-anime-poster"}> */}
+                            <img className="anime-poster-img" variant="top" src={res.image} />
+                            {/* </div> */}
+                            <h3 className="anime-name">
+                            <Link to={`/result/${res.imdbID}`} >{res.title}</Link>
+                            </h3>
+                        </div>
                     ))}
+                </div>
             </div>
         </div>
     );

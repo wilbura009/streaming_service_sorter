@@ -15,7 +15,7 @@ router.route("/").get((req, res) => {
         },
         params: {
             country: 'us',
-            service: 'netflix',
+            service: 'hbo',
             type: 'series',
             page: '1',
             output_language: 'en',
@@ -34,16 +34,22 @@ router.route("/").get((req, res) => {
             console.log(res_array)
         
             // loop through results array and add each title to the database
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 8; i++) {
                 const title = data.results[i].title
                 const imdbID = data.results[i].imdbID
                 const image = data.results[i].posterURLs.original
                 const imageBar = data.results[i].posterURLs["92"]
                 const description = data.results[i].overview
-                // console.log(title)
+                const video = data.results[i].video
+                const streamingInfo = data.results[i].streamingInfo
+                const streamName = Object.keys(data.results[i].streamingInfo)[0]
+                const link = streamingInfo[Object.keys(data.results[i].streamingInfo)[0]].us.link
+                // console.log(streamingInfo)
+                // console.log(streamName)
+                // console.log(link)
                 // console.log(imdbID)
                 // console.log(image)
-                HavenDAO.addTitle(title, imdbID, image, imageBar, description)
+                HavenDAO.addTitle(title, imdbID, image, imageBar, description, streamName, link, video)
             }
             res.json(res_array)
         })
@@ -59,5 +65,9 @@ router.route("/").get((req, res) => {
 router
     .route("/titles")
     .get(HavenController.apiGet)
+
+router
+    .route("/titles/:imdbID")
+    .get(HavenController.apiGetOne)
 
 export default router
