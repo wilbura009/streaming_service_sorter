@@ -8,6 +8,7 @@ import { useState, useEffect } from "react"
 import YoutubeEmbed from "./YoutubeEmbed"
 import { Route } from "react-router-dom"
 import titles from "../services/titles"
+import Footer from "./Footer"
 
 //Create separate css and override
 //Main container wont take a background color?
@@ -49,7 +50,10 @@ export default function Result(props) {
 							<Card style={{ backgroundColor: "#2e3840" }}>
 								<Card.Img src={title && title[0].image} />
 								<Card.Body>
-									<Card.Title className="" style={{borderBottom: "1px solid #FFA500"}}></Card.Title>
+									<Card.Title
+										className=""
+										style={{ borderBottom: "1px solid #FFA500" }}
+									></Card.Title>
 								</Card.Body>
 							</Card>
 						</Col>
@@ -60,7 +64,7 @@ export default function Result(props) {
 								<h5 class="" style={{ color: "#FFA500" }}>
 									Watch now
 								</h5>
-                                
+
 								<Card className="border border-warning">
 									<Card.Body
 										className=""
@@ -71,22 +75,21 @@ export default function Result(props) {
 								</Card>
 							</div>
 
-                            <div class="pad">
-                            <YoutubeEmbed embedId="rokGy0huYEA" />
-                            </div>
+							<div class="pad">
+								<YoutubeEmbed embedId="rokGy0huYEA" />
+							</div>
 
 							<div>
 								<h5 class="" style={{ color: "#FFA500" }}>
 									Synopsis:
 								</h5>
-                                <h7>{title && title[0].description}</h7>
+								<h7>{title && title[0].description}</h7>
 							</div>
-
-                            
 						</Col>
 						<Col sm={1} className="border-left"></Col>
 					</Row>
 				</Container>
+                <Footer></Footer>
 			</div>
 		</>
 	)
