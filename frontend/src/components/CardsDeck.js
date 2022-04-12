@@ -45,9 +45,17 @@ const CardsDeck = props => {
 		<div className="cards__container">
 			<h1>Check out these AWESOME shows!</h1>
 			{/* <SearchBar onSearch={handleSearch} /> */}
-			<div className="cards__wrapper">
+			<div
+				className="cards__wrapper"
+				style={{
+					display: "grid",
+					gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+					gap: "1rem",
+					alignItems: "flex-start",
+				}}
+			>
 				{titles.map(title => (
-					<Card key={title.imdbID} className="card" style={{ width: "18rem" }}>
+					<Card key={title.imdbID} className="card">
 						<Card.Img variant="top" src={title.image} />
 					</Card>
 				))}
