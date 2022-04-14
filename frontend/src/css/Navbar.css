@@ -18,7 +18,7 @@
   margin: 0px 20px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 2vmax; /* vw: variable based on window size */
+  font-size: 1.5vmax; /* vw: variable based on window size */
 }
 
 .navbar-logo:hover {
@@ -30,7 +30,7 @@ a.navbar-home-logo{
   color: #e3e3e3;
   margin: 0px 10px;
   text-decoration: none;
-  font-size: 1.5vmax; /* vw: variable based on window size */
+  font-size: 1vmax; /* vw: variable based on window size */
 }
 
 a.navbar-home-logo:hover {
