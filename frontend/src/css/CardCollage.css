@@ -17,6 +17,10 @@
   margin-bottom: 40px;
 }
 
+.card_inside:hover {
+  transform: scale(1.1);
+}
+
 .img__collage {
   max-width: 50%;
 }

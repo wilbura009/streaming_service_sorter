@@ -51,12 +51,15 @@ const CardsDeck = props => {
 					display: "grid",
 					gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
 					gap: "2rem",
-					alignItems: "flex-start", 
+					alignItems: "flex-start",
+					margin: "2rem" 
 				}}
 			>
 				{titles.map(title => (
-					<Card key={title.imdbID} className="card">
+					<Card key={title.imdbID} className="card_inside">
+						<Link to={`/result/${title.imdbID}`}>
 						<Card.Img variant="top" src={title.image} />
+						</Link>
 					</Card>
 				))}
 			</div>

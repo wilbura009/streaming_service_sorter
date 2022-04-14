@@ -1,6 +1,6 @@
 import React from "react"
 import Navbar from "../components/Navbar"
-import { Button, Card, Col, Container, Image, Row } from "react-bootstrap"
+import { Button, Card, Col, Container, Image, Row, Tile } from "react-bootstrap"
 import "../css/Result.css"
 import { useLocation, useParams } from "react-router-dom"
 import TitlesDataService from "../services/titles"
@@ -9,6 +9,7 @@ import titles from "../services/titles"
 import { Link } from "react-router-dom"
 import YoutubeEmbed from "./YoutubeEmbed"
 import Footer from "./Footer"
+import Icon from "./Icon"
 
 //Create separate css and override
 //Main container wont take a background color?
@@ -69,10 +70,10 @@ export default function Result(props) {
 								<Card className="border border-warning">
 									<Card.Body
 										className=""
-										style={{ backgroundColor: "#2e3840" }}
+										style={{ backgroundColor: "#2e3840", padding: "0.5rem 1rem" }}
 									>
-										<Card.Text>
-											<a href={"" + title.link}>{title.streamName}</a>
+										<Card.Text className='d-flex'>
+											<Icon streamName={title.streamName} link={title.link}></Icon>
 										</Card.Text>
 									</Card.Body>
 								</Card>
