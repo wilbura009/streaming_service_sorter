@@ -2,12 +2,12 @@ import http from "../http-common";
 
 
 class TitlesDataService {
-    getAll(page = 0) {
-        return http.get(`/titles/?page=${page}`);
+    getAll() {
+        return http.get(`streamtitles`);
     }
 
     get(imdbID) {
-        return http.get(`/titles/${imdbID}`);
+        return http.get(`/title?imdbID=${imdbID}`);
     }
 
     // create(data) {
